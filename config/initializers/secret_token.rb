@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Oevis::Application.config.secret_key_base = ENV['SECRET_TOKEN']
+Oevis::Application.config.secret_key_base = '4dc57479ce8769ad008bf54feb9c5c6b4e55669c6f0a2568ca71c05dd95c7896b31d374f165528187d14227b46f7f8900831b859477c06a9def51cb7449eb91d'
