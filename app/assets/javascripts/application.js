@@ -14,3 +14,12 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+jQuery(function($){
+	$('.list-group').on('mouseover','.list-group-item',function(){
+		$(this).addClass('active');
+	});
+	$('.list-group').on('mouseout','.list-group-item',function(){
+		$(this).removeClass('active');
+	});
+});
