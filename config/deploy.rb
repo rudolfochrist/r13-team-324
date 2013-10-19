@@ -87,9 +87,6 @@ deploy.task :restart, :roles => :app do
   sudo "chown -R www-data:www-data #{shared_path}/bundle"
   sudo "chown -R www-data:www-data #{shared_path}/log"
 
-  # load en
-  sudo "source /var/www/oevis-env"
-
   # Restart Application
   run "touch #{current_path}/tmp/restart.txt"
 end
