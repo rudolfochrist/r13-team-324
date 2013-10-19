@@ -1,5 +1,5 @@
 <div class="col-lg-6 col-offset-3">
-	<%= form_for @bookmark, url: {action: "create"} do |f| %>
+	<%= form_for @bookmark do |f| %>
  	<%= f.text_field(:title, placeholder:"WHAT",class: "input-group")%>
  	<%= f.url_field(:url,  placeholder: "WHERE",class: "input-group" )%>
 	<%= f.text_area :description, size: "50x10" ,class: "input-group",placeholder: "ABOUT" %>
