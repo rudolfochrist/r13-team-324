@@ -26,7 +26,7 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
     if @bookmark.create_in_graph
-      redirect_to bookmarks_url, success: 'Bookmark added'
+      redirect_to bookmarks_url, flash: { success: 'Bookmark added' }
     else
       flash.now[:danger] = "We're so sorry but something went wrong!"
       render :new
