@@ -32,7 +32,7 @@ require 'bundler/capistrano'
 #############################################
 
 GITHUB_REPOSITORY_NAME = 'r13-team-324'
-LINODE_SERVER_HOSTNAME = 'fremont632'
+LINODE_SERVER_HOSTNAME = 'li263-178.members.linode.com'
 
 #############################################
 #############################################
