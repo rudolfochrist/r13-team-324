@@ -21,4 +21,8 @@ class BookmarksController < ApplicationController
   def new
   	@bookmark = Bookmark.new
   end
+
+  def create
+  	 redirect_to action: "index"
+  end
 end
