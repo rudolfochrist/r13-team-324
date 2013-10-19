@@ -2,7 +2,7 @@
 	<%= form_for @bookmark, url: {action: "create"} do |f| %>
  	<%= f.text_field(:title, placeholder:"WHAT",class: "input-group")%>
  	<%= f.url_field(:url,  placeholder: "WHERE",class: "input-group" )%>
-	<%= f.text_area :description, size: "60x12" ,class: "input-group",placeholder: "ABOUT" %>
+	<%= f.text_area :description, size: "50x10" ,class: "input-group",placeholder: "ABOUT" %>
 	<%= submit_tag("create", class: "btn btn-danger btn-sm") %>
 	<%= link_to('back',bookmarks_path, class: "btn btn-primary btn-sm")%>
 	<% end %>

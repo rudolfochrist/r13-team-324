@@ -14,6 +14,7 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+//= require ./bootstrap.min
 
 jQuery(function($){
 	$('.list-group').on('mouseover','.list-group-item',function(){
@@ -22,4 +23,5 @@ jQuery(function($){
 	$('.list-group').on('mouseout','.list-group-item',function(){
 		$(this).removeClass('active');
 	});
+	
 });

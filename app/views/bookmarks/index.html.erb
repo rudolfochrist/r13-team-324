@@ -2,12 +2,18 @@
 	
 	<%= link_to('+',new_bookmark_path, class: "btn btn-primary btn-sm")%>
 </div>
-<div class="list-group">
-	<% @bookmarks.each do | bookmark | %>
-		 <a href="<%= bookmark.url %>" class="list-group-item">
-   			 <h4 class="list-group-item-heading"><%= bookmark.title %></h4>
-   			 <p class="list-group-item-text"><%= bookmark.description %></p>
-		  </a>
-	<% end %>
+<ul class="nav nav-tabs" id="myTab">
+  <li class="active"><a data-toggle="tab" data-target="#latest">Latest</a></li>
+  <li><a data-toggle="tab" data-target="#all">All</a></li>
+</ul>
+<div class="tab-content">
+    <div id="latest" class="tab-pane active">
+    	 <%= render partial: "bookmarkList", locals: { bookmarklist: @latest_bookmarks } %>    	
+    </div>
+    <div id="all" class="tab-pane">
+    	 <%= render partial: "bookmarkList", locals: { bookmarklist: @all_bookmarks } %>
+    </div>
 </div>
+
+
 

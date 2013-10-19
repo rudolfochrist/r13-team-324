@@ -15,7 +15,9 @@ class BookmarksController < ApplicationController
   	m3.title = "Test"
   	m3.description = "Test the best"
 
-  	@bookmarks = [m1,m2,m3]
+  	@latest_bookmarks = [m1]
+  	@all_bookmarks = [m1,m2,m3]
+  	
   end
 
   def new
