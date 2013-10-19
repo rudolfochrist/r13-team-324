@@ -1,7 +1,6 @@
 <div class="navbar">
-	<button type="button" class="btn btn-primary btn-sm">
- 		<span>+</span>
-	</button>
+	
+	<%= link_to('+',new_bookmark_path, class: "btn btn-primary btn-sm")%>
 </div>
 <div class="list-group">
 	<% @bookmarks.each do | bookmark | %>

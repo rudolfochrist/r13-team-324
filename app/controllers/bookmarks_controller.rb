@@ -17,4 +17,8 @@ class BookmarksController < ApplicationController
 
   	@bookmarks = [m1,m2,m3]
   end
+
+  def new
+  	@bookmark = Bookmark.new
+  end
 end
