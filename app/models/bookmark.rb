@@ -7,5 +7,9 @@ class Bookmark
   include ActiveModel::Model
   include Neo4j::Node
 
-  attr_accessor :title, :url, :description
+  attr_accessor :title, :url, :description, :date_created
+
+  def initialize
+    @date_created = Time.now
+  end
 end
