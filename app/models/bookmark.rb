@@ -9,7 +9,14 @@ class Bookmark
 
   attr_accessor :title, :url, :description, :date_created
 
-  def initialize
+  def initialize(attributes = {})
+    attributes.each do |k, v|
+      send("#{k}=", v)
+    end
     @date_created = Time.now
+  end
+
+  def self.realtion_name
+    :is_bookmarked
   end
 end

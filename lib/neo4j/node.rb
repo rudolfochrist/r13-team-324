@@ -6,8 +6,7 @@ module Neo4j
       begin
         root = Neography::Node.load(0)
         self_node = Neography::Node.create(self.to_hash)
-        Neography::Relationship.create(:is_bookmarked, root, self_node)
-        root.outgoing(:is_bookmarked) << self_node
+        root.outgoing(self.class.realtion_name) << self_node
         true
       rescue 
         false
@@ -22,8 +21,11 @@ module Neo4j
     end
 
     module ClassMethods
-      def find
-        'found'
+      def all
+        root = Neography::Node.load(0)
+        root.outgoing(self.realtion_name).take(20).map do |node|
+          self.new(node.instance_variable_get(:@table))
+        end
       end
     end
 
