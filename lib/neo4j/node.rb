@@ -25,7 +25,7 @@ module Neo4j
         root = Neography::Node.load(0)
         root.outgoing(self.realtion_name).take(20).map do |node|
           self.new(node.instance_variable_get(:@table))
-        end
+        end.reverse
       end
     end
 
