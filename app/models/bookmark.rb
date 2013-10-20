@@ -13,7 +13,7 @@ class Bookmark
     attributes.each do |k, v|
       send("#{k}=", v)
     end
-    @date_created = Time.now
+    @date_created ||= Time.now
   end
 
   def self.realtion_name
