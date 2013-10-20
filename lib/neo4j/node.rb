@@ -24,7 +24,9 @@ module Neo4j
       def all
         root = Neography::Node.load(0)
         root.outgoing(self.realtion_name).take(20).map do |node|
-          self.new(node.instance_variable_get(:@table))
+          obj = self.new(node.instance_variable_get(:@table))
+          obj.id = node.neo_id
+          obj
         end.reverse
       end
     end
