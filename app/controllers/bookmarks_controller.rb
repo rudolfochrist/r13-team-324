@@ -2,9 +2,8 @@ class BookmarksController < ApplicationController
   def index
     @all_bookmarks = Bookmark.all
 
-    two_minutes_ago = 2.minutes.ago
     @latest_bookmarks = @all_bookmarks.select do |bookmark|
-      bookmark.date_created >= two_minutes_ago
+      bookmark.date_created >= 5.hours.ago
     end
   end
 
@@ -23,11 +22,11 @@ class BookmarksController < ApplicationController
   end
 
    def edit
-  	redirect_to action: "new"
+    redirect_to action: "new"
   end
 
   def destroy
-  	redirect_to action: "index"
+    redirect_to action: "index"
   end
 
   private
