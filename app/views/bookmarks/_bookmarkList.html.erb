@@ -1,8 +1,15 @@
  <div class="list-group">
   <% bookmarklist.each do | bookmark | %>
+  <div class="input-group">
     <a href="<%= bookmark.url %>" class="list-group-item">
       <h4 class="list-group-item-heading"><%= bookmark.title %></h4>
       <p class="list-group-item-text"><%= bookmark.description %></p>
     </a>
+    <div class="input-group-btn">
+      <span class="btn-group-vertical">
+        <%= link_to('delete', bookmark_path(bookmark.id), class: "btn btn-danger btn-sm",:confirm => 'Are you sure?', :method => :delete) %>
+      </span>
+    </div>
+  </div>
   <% end %>
 </div>

@@ -1,7 +1,6 @@
 class BookmarksController < ApplicationController
   def index
     @all_bookmarks = Bookmark.all
-
     @latest_bookmarks = @all_bookmarks.select do |bookmark|
       bookmark.date_created >= 5.hours.ago
     end
@@ -22,7 +21,9 @@ class BookmarksController < ApplicationController
   end
 
   def destroy
-    redirect_to action: "index"
+    bookmark = Bookmark.find(params[:id])
+    bookmark.destory
+    redirect_to bookmarks_url
   end
 
   private

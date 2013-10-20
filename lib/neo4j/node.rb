@@ -20,6 +20,10 @@ module Neo4j
       end
     end
 
+    def destory
+      Neography::Node.load(id).del
+    end
+
     module ClassMethods
       def all
         root = Neography::Node.load(0)
@@ -28,6 +32,13 @@ module Neo4j
           obj.id = node.neo_id
           obj
         end.reverse
+      end
+
+      def find(id)
+        node = Neography::Node.load(id)
+        obj = self.new(node.instance_variable_get(:@table))
+        obj.id = node.neo_id
+        obj
       end
     end
 
