@@ -21,10 +21,6 @@ class BookmarksController < ApplicationController
     end
   end
 
-   def edit
-    redirect_to action: "new"
-  end
-
   def destroy
     redirect_to action: "index"
   end
